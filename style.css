@@ -65,6 +65,7 @@ ul > li, nav > h1 {
     display: grid;
     grid-template: 1fr 1fr / 2fr 1fr;
     text-align: center;
+    border: 1px solid red;
 }
 
 .searchbar {
@@ -73,9 +74,65 @@ ul > li, nav > h1 {
     align-self: center;
 }
 
+.search-container {
+    position: relative;
+    width: 800px;
+    justify-content: left;
+    display: flex;
+    padding-left: 100px ;
+}
+
+input[type="search"] {
+    /* display: inline; */
+    appearance: none;
+    width: 70%;
+    height: 25px;
+    padding: 0 0.5em;
+    border: none;
+    border-radius: 20px;
+    background-color: #e5e7eb;
+}
+
+input[type="search"]:not(:focus, :active)::-webkit-search-cancel-button {
+    display: none;
+}
+
+input[type="search"]:focus {
+    outline: none;
+    border: 2px solid #6b7280;
+}
+
+input[type="search"] + div {
+    position: relative;
+}
+
+input[type="search"] + div:before {
+    content:url(graphics/magnify.svg);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -585px;
+    top: 1px;
+}
+
 .greeting {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 4fr;
+    align-items: center;
+}
+
+.circle {
+    grid-column: 2 / span 1;
+    display: flex;
+    border: 1px solid #fbbf24;
+    background-color: #fbbf24;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    align-items: center;
+    justify-content: center;
 }
 
 .notifications {
