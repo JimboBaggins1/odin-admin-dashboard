@@ -8,6 +8,8 @@ body, html {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
+    --lh: 1.4rem;
+    line-height: var(--lh);
 }
 
 ul, h1 {
@@ -208,6 +210,31 @@ input[type="search"] + div:before {
 /* End Header */
 
 /* Main content */
+
+/* Truncate overflow, courtesy of https://css-tricks.com/multi-line-truncation-with-pure-css/ */
+.truncate-overflow {
+    position: relative;
+    --max-lines: 7;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+}
+
+.truncate-overflow::before {
+    content: "...";
+    position: absolute;
+    top: calc(var(--lh) * (var(--max-lines) - 1));
+    right: 0;
+}
+
+.truncate-overflow::after {
+    content: "";
+    position: absolute;
+    right: 0; /* note: not using bottom */
+    width: 1rem;
+    height: 1rem;
+    background: white;
+}
+
 .main-content {
     grid-area: content;
     display: grid;
@@ -250,7 +277,7 @@ input[type="search"] + div:before {
 }
 
 .card h4, .card p {
-    padding-left: 20px;
+    padding: 0 20px;
 }
 
 .icons {
