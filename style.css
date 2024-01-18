@@ -11,7 +11,7 @@ body, html {
 }
 
 ul, h1 {
-    padding-left: 20px;
+    padding-left: 0;
 }
 
 ul {
@@ -21,6 +21,10 @@ ul {
 a {
     text-decoration: none;
     color: white;
+}
+
+h4 {
+    margin: 25px 0px;
 }
 
 .grid-container {
@@ -37,6 +41,7 @@ a {
     grid-template: 1fr 2fr 1fr 3fr / 1fr;
     background-color: #3b82f6;
     color: white;
+    padding: 0px 20px;
 }
 
 .sidebar .sidebar-title {
@@ -189,6 +194,7 @@ input[type="search"] + div:before {
 }
 
 .btn {
+    cursor: pointer;
     font-style: inherit;
     font-size: 80%;
     color: white;
@@ -209,8 +215,48 @@ input[type="search"] + div:before {
     background-color: #e5e7eb;
 }
 
+.main-content > div {
+    padding: 20px;
+}
+
 .projects {
+    /* height: 100%; */
     grid-area: 1 / 1 / 3 / 2;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    gap: 1rem; */
+}
+
+
+.project-grid {
+    position: relative;
+    height: calc(100% - 78px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    gap: 1rem;
+    /* padding-bottom: 20px; */
+}
+
+.project-grid .card {
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    border-left: 10px solid #fbbf24;
+    overflow-y: hidden;
+}
+
+.card {
+    position: relative;
+}
+
+.card h4, .card p {
+    padding-left: 20px;
+}
+
+.icons {
+    position: absolute;
+    top: 80%;
+    left: 55%;
 }
 
 .announcements {
