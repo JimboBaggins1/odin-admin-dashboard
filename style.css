@@ -170,8 +170,6 @@ input[type="search"] + div:before {
     width: 50px;
 }
 
-
-
 .notifications {
     grid-row: 1 / 2;
     display: grid;
@@ -238,7 +236,7 @@ input[type="search"] + div:before {
 .main-content {
     grid-area: content;
     display: grid;
-    grid-template: 1fr 1fr / 2fr 1fr;
+    grid-template: 1fr 1fr / 3fr 1fr;
     background-color: #e5e7eb;
 }
 
@@ -264,12 +262,15 @@ input[type="search"] + div:before {
     /* padding-bottom: 20px; */
 }
 
-.project-grid .card {
+.announcements .card, .trending .card, .project-grid .card {
     border: none;
     border-radius: 10px;
     background-color: white;
-    border-left: 10px solid #fbbf24;
     overflow-y: hidden;
+}
+
+.project-grid .card {
+    border-left: 10px solid #fbbf24;
 }
 
 .card {
@@ -278,6 +279,13 @@ input[type="search"] + div:before {
 
 .card h4, .card p {
     padding: 0 20px;
+}
+
+
+.announcements .card, .trending .card {
+    /* border: 1px solid red; */
+    height: calc(100% - 78px);
+    max-width: 75%;
 }
 
 .icons {
