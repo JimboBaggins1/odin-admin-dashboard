@@ -143,7 +143,7 @@ input[type="search"] + div:before {
     text-align: left;
 }
 
-.circle, .circle-small {
+.circle, .circle-small, .circle-blue, .circle-grey, .circle-green {
     display: flex;
     border: 1px solid #fbbf24;
     background-color: #fbbf24;
@@ -165,9 +165,24 @@ input[type="search"] + div:before {
     /* justify-content: center; */
 }
 
-.circle-small {
+.circle-small, .circle-blue, .circle-grey, .circle-green {
     height: 50px;
     width: 50px;
+}
+
+.circle-blue {
+    border: 1px solid #bae6fd;
+    background-color: #bae6fd;
+}
+
+.circle-grey {
+    border: 1px solid #e5e5e5;
+    background-color: #e5e5e5;
+}
+
+.circle-green {
+    border: 1px solid #bbf7d0;
+    background-color: #bbf7d0;
 }
 
 .notifications {
@@ -275,17 +290,36 @@ input[type="search"] + div:before {
 
 .card {
     position: relative;
-}
-
-.card h4, .card p {
     padding: 0 20px;
 }
 
+.trending .card {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.trending-row {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    column-gap: 10px;
+} 
 
 .announcements .card, .trending .card {
     /* border: 1px solid red; */
     height: calc(100% - 78px);
     max-width: 75%;
+    padding: 20px;
+}
+
+.card strong {
+    font-size: 0.8rem;
+    display: block;
+}
+
+.announcements .card p, .trending .card p {
+    font-size: 0.7rem;
+    padding: 0;
+    margin: 0;
 }
 
 .icons {
